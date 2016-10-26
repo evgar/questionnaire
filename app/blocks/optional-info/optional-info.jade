@@ -1,0 +1,16 @@
+- var skillsOptions = ['БЭМ/OOCSS','Pug (Jade)','Stylus/LESS/SASS','Работаю с SVG','Верстаю семантично','Accessibility (A11Y)','ES2015/ES2016','Gulp/GRUNT','Webpack','Дружу с WebGL','jQuery','Знаю/изучаю Angular','Знаю/изучаю React','Знаю/изучаю Node.js', 'Использую Git','С глазомером всё ок', 'Читаю #{blogLink}', 'Я ленивый(-ая)', 'У меня хороший английский'];
+- var skillsOptionsState = [true,true,true,false,true,false,false,true,false,false,true,true,false,false,true,true,true,false,true]
+- var blogLink = 'http://blog.csssr.ru/'
+mixin optional-info(checkboxes, state)
+	fieldset
+		legend Расскажите о себе чекбоксами
+		p Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+		- for (var i = 0; i < checkboxes.length; i++) {
+			label #{checkboxes[i]}
+				if (state[i] == true)
+					input(type='checkbox' checked)
+				else
+					input(type='checkbox')
+		- }
+
++optional-info(skillsOptions, skillsOptionsState)

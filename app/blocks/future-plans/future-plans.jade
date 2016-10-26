@@ -1,0 +1,16 @@
+- var planesOptions = ['Верстать','Прокачиваться в JS','Менеджерство','Другое']
+- var planesOptionsState = [false, true, false, false]
+
+mixin future-plans(checkboxes, state)
+	fieldset
+		legend Какие у вас планы на будущее?
+		p Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+		- for (var i = 0; i < checkboxes.length; i++) {
+		label #{checkboxes[i]}
+			if (state[i] == true)
+				input(type='radio' name="chooseYoureWay" checked)
+			else
+				input(type='radio' name="chooseYoureWay")
+		- }
+
++future-plans(planesOptions, planesOptionsState)
