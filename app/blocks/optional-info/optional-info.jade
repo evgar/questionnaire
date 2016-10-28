@@ -2,15 +2,16 @@
 - var skillsOptionsState = [true,true,true,false,true,false,false,true,false,false,true,true,false,false,true,true,true,false,true]
 - var blogLink = 'http://blog.csssr.ru/'
 mixin optional-info(checkboxes, state)
-	fieldset
-		legend Расскажите о себе чекбоксами
-		p Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
-		- for (var i = 0; i < checkboxes.length; i++) {
-			label #{checkboxes[i]}
-				if (state[i] == true)
-					input(type='checkbox' checked)
-				else
-					input(type='checkbox')
-		- }
+	fieldset(class='optional-info')
+		legend(class='optional-info__caption') Расскажите о себе чекбоксами
+		p(class='optional-info__description') Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+		div(class = 'options-block optional-info__options')
+			- for (var i = 0; i < checkboxes.length; i++) {
+				label(class='options-block__option') #{checkboxes[i]}
+					if (state[i] == true)
+						input(class='options-block__checkbox' type='checkbox' checked)
+					else
+						input(class='options-block__checkbox' type='checkbox')
+			- }
 
 +optional-info(skillsOptions, skillsOptionsState)

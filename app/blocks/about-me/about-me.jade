@@ -3,10 +3,10 @@
 
 
 mixin about-me(question, answer)
-	fieldset
+	fieldset(class='about-me')
 		- for (var i = 0; i < personalInfoValue.length; i++) {
-			label #{question[i]}
-				input(value='#{answer[i]}')
+			label(class='form-question about-me__point') #{question[i]}
+				input(class='about-me__answer' value='#{answer[i]}')
 		- }
 
 +about-me(personalInfoLabel, personalInfoValue)
