@@ -1,15 +1,21 @@
 .about-me
 	display flex
+	margin 0 0 8% 0
 	&__point
 		display flex
-		justify-content center
-		align-items center
 		font label-text
+		font-weight bold
 		color main-font-color
+		white-space nowrap
+		&:not(:first-child)
+			margin 4.3% 0 0 0
 	&__answer
 		font input-text
 		color input-text-color
 		background-color transparent
-		border-style: solid
-		border-width: 0px 27px 4px
-		border-image: shabby-brown-line
+		border-style solid
+		border-width 0 0 4px
+		border-image shabby-brown-line
+		width 100%
+		margin -3% 0 0 15px
+		padding 5px 12px
