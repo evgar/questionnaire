@@ -1,19 +1,41 @@
-- var skillsOptions = ['БЭМ/OOCSS','Pug (Jade)','Stylus/LESS/SASS','Работаю с SVG','Верстаю семантично','Accessibility (A11Y)','ES2015/ES2016','Gulp/GRUNT','Webpack','Дружу с WebGL','jQuery','Знаю/изучаю Angular','Знаю/изучаю React','Знаю/изучаю Node.js', 'Использую Git','С глазомером всё ок', 'Читаю #{blogLink}', 'Я ленивый(-ая)', 'У меня хороший английский'];
-- var skillsOptionsState = [true,true,true,false,true,false,false,true,false,false,true,true,false,false,true,true,true,false,true]
-- var inputNames = ['bem','pug','css_preprocessor','svg','semantic_layout','accessibility','es','packages','webpack','webGL','jQuery','angular','react','nodeJs','git','pixelPerfect','blogReader','lazy','english'];
-- var blogLink = 'http://blog.csssr.ru/'
-mixin optional-info(checkboxes, state, names)
+- var options = [];
+- options.push({label: 'БЭМ/OOCSS', state: true, name: 'bem'});
+- options.push({label: 'Pug (Jade)', state: true, name: 'pug'});
+- options.push({label: 'Stylus/LESS/SASS', state: true, name: 'css_preprocessor'});
+- options.push({label: 'Работаю с SVG', state: false, name: 'svg'});
+- options.push({label: 'Верстаю семантично', state: true, name: 'semantic_layout'});
+- options.push({label: 'Accessibility (A11Y)', state: false, name: 'accessibility'});
+- options.push({label: 'ES2015/ES2016', state: false, name: 'es'});
+- options.push({label: 'Gulp/GRUNT', state: true, name: 'packages'});
+- options.push({label: 'Webpack', state: false, name: 'webpack'});
+- options.push({label: 'Дружу с WebGL', state: false, name: 'webGL'});
+- options.push({label: 'jQuery', state: true, name: 'jQuery'});
+- options.push({label: 'Знаю/изучаю Angular', state: true, name: 'angular'});
+- options.push({label: 'Знаю/изучаю React', state: false, name: 'react'});
+- options.push({label: 'Знаю/изучаю Node.js', state: false, name: 'nodeJs'});
+- options.push({label: 'Использую Git', state: true, name: 'git'});
+- options.push({label: 'С глазомером всё ок', state: true, name: 'pixelPerfect'});
+- options.push({label: 'Читаю', state: true, name: 'blogReader', link: 'http://blog.csssr.ru/'});
+- options.push({label: 'Я ленивый(-ая)', state: false, name: 'lazy'});
+- options.push({label: 'У меня хороший английский', state: true, name: 'english'});
+
+mixin optional-info(options)
 	fieldset(class='optional-info')
 		legend(class='optional-info__caption') Расскажите о себе чекбоксами
 		p(class='optional-info__description') Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
 		div(class = 'options-block optional-info__options')
-			- for (var i = 0; i < checkboxes.length; i++) {
-			if (state[i] == true)
-				input(class='options-block__checkbox options-block__checkbox-disable' type='checkbox' name='#{names[i]}'  checked)
-				label(class='options -block__option' for='#{names[i]}') #{checkboxes[i]}
-			else
-				input(class='options-block__checkbox options-block__checkbox-disable' type='checkbox' name='#{names[i]}')
-				label(class='options -block__option' for='#{names[i]}') #{checkboxes[i]}
-			- }
+			each val, index in options
+				if val[Object.keys(val)[1]] && val[Object.keys(val)[3]]
+					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}'  checked)
+					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+						a(href='#{val[Object.keys(val)[3]]}') blog.cssr.ru
+				else if val[Object.keys(val)[1]]
+					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}'  checked)
+					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+				else
+					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}')
+					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
 
-+optional-info(skillsOptions, skillsOptionsState, inputNames)
++optional-info(options)
+
+

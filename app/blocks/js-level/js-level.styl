@@ -1,4 +1,52 @@
-.js-level
-	flex-flow row wrap
-	&__switch
-		width 90%
+.js-level__caption
+	font block-title-text
+	font-weight bold
+.js-level__switch
+	-webkit-appearance none
+	width 100%
+	background transparent
+	background: url('../../images/input-border.png') repeat-x;
+	background-position-y 17px
+	//height 4px
+	&::-webkit-slider-thumb
+		-webkit-appearance none
+		thumbStyle()
+		//height 30px
+	&::-moz-range-thumb
+		thumbStyle()
+	&::-ms-thumb
+		thumbStyle()
+	&:focus
+		outline none
+	&::-ms-track
+		width 100%
+		cursor pointer
+		background transparent
+		border-color transparent
+		color transparent
+		//height 0
+	&::-webkit-slider-runnable-track
+		width 100%
+		cursor pointer
+		background-image: url('../../images/input-border.png') repeat;
+		//background-position-y 17px
+	&:focus::-webkit-slider-runnable-track
+		background transparent
+	&::-moz-range-track
+		width 100%
+		cursor pointer
+		background-image url('../../images/input-border.png') repeat
+		background-color transparent
+		height 20px
+		//background-position-y 17px
+	&::-ms-track
+		width: 100%
+		cursor: pointer;
+		background: transparent;
+		border-color: transparent;
+		border-width: 16px 0
+		color transparent
+	&::-ms-fill-lower
+		background transparent
+	&::-ms-fill-upper
+		background transparent

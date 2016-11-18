@@ -3,10 +3,10 @@
 mixin generateIndicatorValues(indicator)
 	fieldset(class='js-level')
 		legend(class='js-level__caption') Уровень владения JavaScript
-		input(class='js-level__switch' type='range' min = 1 max = 10 step = 1)
-		div(class='js-level__indicator')
+		input(class='js-level__switch' type='range' min = 0 max = 10 value=5 list='skills_list' id='skills')
+		datalist(class='js-level__indicator' id='skills_list')
 			- for (var i = 0; i < indicator.length; i++) {
-			span(class='js-level__value') #{indicator[i]}
+			option(class='js-level__value') #{indicator[i]}
 			- }
 
 +generateIndicatorValues(indicatorValues)
