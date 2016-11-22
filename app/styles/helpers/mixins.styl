@@ -48,7 +48,22 @@ retinaBackground($image, $ext = 'png') {
 thumbStyle() {
 	height 30px
 	width 17px
-	cursor pointer
-	background url("../../images/test.png") no-repeat
+	cursor e-resize
+	background url("../../images/thumb.png") no-repeat
 	border none
+}
+
+//Range input values indicator
+
+indicatorStyle(arg) {
+	position absolute
+	content ''
+	width 2px
+	background url(../../images/value-metter.png) no-repeat
+	top -7px
+	if (arg == 'large') {
+		height 24px
+	} else {
+		height 12px
+	}
 }

@@ -25,8 +25,10 @@ function runWebpack(watch = false) {
 				});
 			}
 			statsLogger(error, stats);
-			callback();
-		});
+			if (watch === false) {
+				callback();
+				}
+			});
 	};
 }
 

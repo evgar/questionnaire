@@ -1,16 +1,17 @@
-- var planesOptions = ['Верстать','Прокачиваться в JS','Менеджерство','Другое']
-- var planesOptionsState = [false, true, false, false]
+- var ways = [];
 
-mixin future-plans(checkboxes, state)
-	fieldset
-		legend Какие у вас планы на будущее?
-		p Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
-		- for (var i = 0; i < checkboxes.length; i++) {
-		label #{checkboxes[i]}
-			if (state[i] == true)
-				input(type='radio' name="chooseYoureWay" checked)
-			else
-				input(type='radio' name="chooseYoureWay")
-		- }
+- ways.push({label: 'Верстать', state: false, name: 'layout-way'});
+- ways.push({label: 'Прокачиваться в JS', state: true, name: 'js-way'});
+- ways.push({label: 'Менеджерство', state: false, name: 'management-way'});
+- ways.push({label: 'Другое', state: false, name: 'other-way'});
 
-+future-plans(planesOptions, planesOptionsState)
+fieldset(class='future-plans')
+	legend(class='future-plans__caption') Какие у вас планы на будущее?
+	p(class='future-plans__description') Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+	each val, index in ways
+		if (val[Object.keys(val)[1]])
+			input(class='future-plans__answer' id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio' checked)
+			label(class='future-plans__point' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+		else
+			input(class='future-plans__answer' id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio')
+			label(class='future-plans__point' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
