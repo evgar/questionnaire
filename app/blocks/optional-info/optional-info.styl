@@ -2,9 +2,10 @@
 	display block
 	margin 0 0 35px 0
 	&__caption
-		font main-font-color
+		font block-title-text
 		font-weight bold
 		margin 0 0 9px 0
+		color main-font-color
 	&__description
 		font description-text
 		color description-text-color
@@ -21,6 +22,7 @@
 		cursor pointer
 		margin 3.5px 5.8% 4.5px 0.5%
 		text-shadow 0px 1px black
+		width 29%
 	&__checkbox
 		display none
 		+label:before
@@ -31,5 +33,6 @@
 			background url("../../images/icon-sprite.png") no-repeat
 			position relative
 			background-position -100px 0
+			left -5px
 		&:checked + label:before
 			background-position -72px 0

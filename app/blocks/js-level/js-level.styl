@@ -1,73 +1,72 @@
-.js-level__caption
-	font block-title-text
-	font-weight bold
-.js-level__switch
-	-webkit-appearance none
-	width 100%
-	background transparent
-	background: url('../../images/input-border.png') repeat-x;
-	//background-position-y 17px
-	height 4px
-	&::-webkit-slider-thumb
+.js-level
+	margin 0 0 30px 0
+	&__caption
+		font block-title-text
+		font-weight bold
+		color main-font-color
+		margin 0 0 30px 5px
+	&__switch
 		-webkit-appearance none
-		thumbStyle()
-	&::-moz-range-thumb
-		thumbStyle()
-	&::-ms-thumb
-		thumbStyle()
-	&:focus
-		outline none
-	&::-ms-track
 		width 100%
 		background transparent
-		border-color transparent
-		color transparent
-		//height 0
-	&::-webkit-slider-runnable-track
-		width 100%
-		background-image: url('../../images/input-border.png') repeat;
-		//background-position-y 17px
-	&:focus::-webkit-slider-runnable-track
-		background transparent
-	&::-moz-range-track
-		width 100%
-		background-image url('../../images/input-border.png') repeat
-		background-color transparent
+		background url('../../images/input-border.png') repeat-x
 		height 20px
-	&::-ms-track
-		width: 100%
-		background: transparent;
-		border-color: transparent;
-		border-width: 16px 0
-		color transparent
-	&::-ms-fill-lower
-		background transparent
-	&::-ms-fill-upper
-		background transparent
-
-.js-level__indicator
-	display block
-	//margin -15px 0 0 0
-.js-level__value
-	float left
-	white-space normal
-	font input-indicator
-	position relative
-	padding 25px 0 0 0
-	&:first-child
-		width 20.4%
-		&::before
-			indicatorStyle(large)
-	&:nth-child(2)
-		width 29.4%
-		&::before
-			indicatorStyle(normal)
-	&:nth-child(3)
-		width 35%
-		&::before
-			indicatorStyle(normal)
-	&:nth-child(4)
-		width 15%
-		&::after
-			indicatorStyle(large)
-			right 0px
+		background-position 0% 100%
+		&::-webkit-slider-thumb
+			-webkit-appearance none
+			thumbStyle()
+		&::-moz-range-thumb
+			thumbStyle()
+		&::-ms-thumb
+			thumbStyle()
+		&:focus
+			outline none
+		&::-webkit-slider-runnable-track
+			width 100%
+			background-image: url('../../images/input-border.png') repeat;
+			height 30px
+		&:focus::-webkit-slider-runnable-track
+			background transparent
+		&::-moz-range-track
+			width 100%
+			background-image url('../../images/input-border.png') repeat
+			background-color transparent
+		&::-ms-track
+			width: 100%
+			background: transparent;
+			border-color: transparent;
+			border-width: 16px 0
+			color transparent
+			//background-repeat: no-repeat;
+			//background-attachment: fixed;
+			//background-position 0% 50%
+		&::-ms-fill-lower
+			background transparent
+		&::-ms-fill-upper
+			background transparent
+	&__indicator
+		display block
+	&__value
+		float left
+		white-space normal
+		font input-indicator
+		position relative
+		padding 25px 0 0 0
+		&:first-child
+			width 20.4%
+			&::before
+				indicatorStyle(large)
+		&:nth-child(2)
+			width 29.4%
+			&::before
+				indicatorStyle(normal)
+		&:nth-child(3)
+			width 22%
+			&::before
+				indicatorStyle(normal)
+		&:nth-child(4)
+			width 28%
+			padding-left 9%
+			&::after
+				indicatorStyle(large)
+				right 0px
