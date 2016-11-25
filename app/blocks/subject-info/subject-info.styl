@@ -1,5 +1,7 @@
 .subject-info
 	margin 0 0 42px 0
+	+below(2)
+		margin 0 0 10px 0px
 	&__caption
 		font block-title-text
 		font-weight bold
@@ -11,6 +13,8 @@
 		line-height 1.5em
 		margin 0 0 15px 0.5%
 		width 99%
+		+below(5)
+			text-align justify
 	&__text
 		background transparent url('../../images/textarea-row.png') repeat
 		border none
@@ -21,5 +25,4 @@
 		padding 10px 0 0 6px
 		line-height 60px
 		display block
-		//box-sizing padding-box
 		min-height 130px

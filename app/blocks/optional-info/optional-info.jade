@@ -27,8 +27,8 @@ mixin optional-info(options)
 			each val, index in options
 				if val[Object.keys(val)[1]] && val[Object.keys(val)[3]]
 					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}'  checked)
-					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
-						a(href='#{val[Object.keys(val)[3]]}') blog.cssr.ru
+					label(class='options-block__option option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+						a(class='option__link' href='#{val[Object.keys(val)[3]]}') blog.cssr.ru
 				else if val[Object.keys(val)[1]]
 					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}'  checked)
 					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}

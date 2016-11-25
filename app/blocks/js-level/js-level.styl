@@ -1,10 +1,12 @@
 .js-level
 	margin 0 0 30px 0
+	+below(2)
+		margin 0 0 10px 0px
 	&__caption
 		font block-title-text
-		font-weight bold
 		color main-font-color
 		margin 0 0 30px 5px
+		font-weight bold
 	&__switch
 		-webkit-appearance none
 		width 100%
@@ -37,21 +39,21 @@
 			border-color: transparent;
 			border-width: 16px 0
 			color transparent
-			//background-repeat: no-repeat;
-			//background-attachment: fixed;
-			//background-position 0% 50%
 		&::-ms-fill-lower
 			background transparent
 		&::-ms-fill-upper
 			background transparent
 	&__indicator
 		display block
+		clearfix()
 	&__value
 		float left
 		white-space normal
 		font input-indicator
 		position relative
 		padding 25px 0 0 0
+		color main-font-color
+		font-weight bold
 		&:first-child
 			width 20.4%
 			&::before
@@ -70,3 +72,5 @@
 			&::after
 				indicatorStyle(large)
 				right 0px
+			+below(1)
+				padding-left 13%
