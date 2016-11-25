@@ -1,7 +1,6 @@
-mixin subject-info(checkboxes, state)
-	fieldset(class='subject-info')
-		legend(class='subject-info__caption') Расскажите о себе словами
-		p(class='subject-info__description') Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
-		textarea(class='subject-info__text autoExpand' id='infoText' rows='3' data-min-rows='3')
+fieldset.subject-info
+	legend.subject-info__caption Расскажите о себе словами
+	p.subject-info__description Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR.
+		|Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
+	textarea.subject-info__text.autoExpand#infoText(rows='3' data-min-rows='3')
 
-+subject-info(planesOptions, planesOptionsState)

@@ -1,15 +1,18 @@
 .optional-info
 	display block
+
 	&__caption
 		font block-title-text
 		font-weight bold
 		margin 0 0 9px 0
 		color main-font-color
+
 	&__description
 		font description-text
 		color description-text-color
 		line-height 1.5em
 		margin 0 0 3.2% 0
+
 		+below(5)
 			text-align justify
 
@@ -18,36 +21,40 @@
 	display flex
 	flex-flow column wrap
 	height 260px
+
 	+below(5)
 		height 375px
-	//+below(4)
-	//	height 490px
+
 	+below(3)
-		//height 100%
 		margin 0 0 0 15%
+
 	+below(2)
 		margin 0
 		height 500px
+
 	+below(1)
 		height 100%
+
 	&__option
 		font-weight: bold;
 		cursor pointer
 		margin 3.5px 5.8% 4.5px 0.5%
-		text-shadow 0px 1px black
+		text-shadow 0 1px black
 		width 29
+
 		+below(5)
 			width 50%
 			text-align justify
-		//+below(4)
-		//	//width 50%
+
 		+below(3)
 			width 50%
 			margin 0 0 10px 0
+
 		+below(1)
 			width 100%
 	&__checkbox
 		display none
+
 		+label:before
 			content ''
 			display inline-block
@@ -57,6 +64,7 @@
 			position relative
 			background-position -100px 0
 			left -5px
+
 		&:checked + label:before
 			background-position -72px 0
 
@@ -64,5 +72,6 @@
 	&__link
 		color #1f5f97
 		text-shadow none
+
 		&:visited
 			 color #1f5f97

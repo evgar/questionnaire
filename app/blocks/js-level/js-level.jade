@@ -1,12 +1,12 @@
 - var indicatorValues = ['Не владею','Использую готовые решения','Использую готовые решения и умею их переделывать','Пишу сложный JS с нуля']
 
 mixin generateIndicatorValues(indicator)
-	fieldset(class='js-level')
-		legend(class='js-level__caption') Уровень владения JavaScript
-		input(class='js-level__switch' type='range' min = 0 max = 10 value=5 list='skills_list' id='skills')
-		div(class='js-level__indicator' id='skills_list')
+	fieldset.js-level
+		legend.js-level__caption Уровень владения JavaScript
+		input.js-level__switch#skills(type='range' min = 0 max = 10 value=5 list='skills_list')
+		.js-level__indicator#skills_list
 			- for (var i = 0; i < indicator.length; i++) {
-			div(class='js-level__value') #{indicator[i]}
+			.js-level__value #{indicator[i]}
 			- }
 
 +generateIndicatorValues(indicatorValues)

@@ -5,13 +5,13 @@
 - ways.push({label: 'Менеджерство', state: false, name: 'management-way'});
 - ways.push({label: 'Другое', state: false, name: 'other-way'});
 
-fieldset(class='future-plans')
-	legend(class='future-plans__caption') Какие у вас планы на будущее?
-	p(class='future-plans__description') Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+fieldset.future-plans
+	legend.future-plans__caption Какие у вас планы на будущее?
+	p.future-plans__description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
 	each val, index in ways
 		if (val[Object.keys(val)[1]])
-			input(class='future-plans__answer' id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio' checked)
-			label(class='future-plans__point' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+			input.future-plans__answer(id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio' checked)
+			label.future-plans__point(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
 		else
-			input(class='future-plans__answer' id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio')
-			label(class='future-plans__point' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+			input.future-plans__answer(id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio')
+			label.future-plans__point(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}

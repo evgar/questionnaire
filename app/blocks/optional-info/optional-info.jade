@@ -20,21 +20,23 @@
 - options.push({label: 'У меня хороший английский', state: true, name: 'english'});
 
 mixin optional-info(options)
-	fieldset(class='optional-info')
-		legend(class='optional-info__caption') Расскажите о себе чекбоксами
-		p(class='optional-info__description') Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
-		div(class = 'options-block optional-info__options')
+	fieldset.optional-info
+		legend.optional-info__caption Расскажите о себе чекбоксами
+		p.optional-info__description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам.
+			|Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей.
+			|Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+		div.options-block.optional-info__options
 			each val, index in options
 				if val[Object.keys(val)[1]] && val[Object.keys(val)[3]]
-					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}'  checked)
-					label(class='options-block__option option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
-						a(class='option__link' href='#{val[Object.keys(val)[3]]}') blog.cssr.ru
+					input.options-block__checkbox(id='#{val[Object.keys(val)[2]]}' type='checkbox' name='#{val[Object.keys(val)[2]]}' checked)
+					label.options-block__option(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+						a.option__link(href='#{val[Object.keys(val)[3]]}') blog.cssr.ru
 				else if val[Object.keys(val)[1]]
-					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}'  checked)
-					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+					input.options-block__checkbox(id='#{val[Object.keys(val)[2]]}' type='checkbox' name='#{val[Object.keys(val)[2]]}' checked)
+					label.options-block__option(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
 				else
-					input(class='options-block__checkbox' type='checkbox' name='#{val[Object.keys(val)[2]]}' id='#{val[Object.keys(val)[2]]}')
-					label(class='options-block__option' for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+					input.options-block__checkbox(id='#{val[Object.keys(val)[2]]}' type='checkbox' name='#{val[Object.keys(val)[2]]}')
+					label.options-block__option(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
 
 +optional-info(options)
 
