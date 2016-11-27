@@ -5,8 +5,8 @@
 mixin about-me(question, answer)
 	fieldset.about-me
 		- for (var i = 0; i < personalInfoValue.length; i++) {
-			label.about-me__point #{question[i]}
-				input.about-me__answer(value='#{answer[i]}')
+			label.point #{question[i]}
+				input.point__answer(value='#{answer[i]}')
 		- }
 
 +about-me(personalInfoLabel, personalInfoValue)
