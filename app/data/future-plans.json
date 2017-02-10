@@ -1,0 +1,22 @@
+[
+  {
+	"label": "Верстать",
+	"state": "false",
+	"name": "layout-way"
+  },
+  {
+	"label": "Прокачиваться в JS",
+	"state": "true",
+	"name": "js-way"
+  },
+  {
+	"label": "Менеджерство",
+	"state": "false",
+	"name": "management-way"
+  },
+  {
+	"label": "Другое",
+	"state": "false",
+	"name": "other-way"
+  }
+]

@@ -1,18 +1,12 @@
-- var ways = [];
-
-- ways.push({label: 'Верстать', state: false, name: 'layout-way'});
-- ways.push({label: 'Прокачиваться в JS', state: true, name: 'js-way'});
-- ways.push({label: 'Менеджерство', state: false, name: 'management-way'});
-- ways.push({label: 'Другое', state: false, name: 'other-way'});
-
-mixin future-plans()
+mixin future-plans(ways)
 	fieldset.future-plans
 		legend.future-plans__caption Какие у вас планы на будущее?
 		p.future-plans__description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
-		each val, index in ways
-			if (val[Object.keys(val)[1]])
-				input.future-plans__answer(id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio' checked)
-				label.future-plans__point(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+		
+		each val in ways
+			if val.state == "true"
+				input.future-plans__answer(id='#{ val.name }' name='chooseYourWay}' type='radio' checked)
+				label.future-plans__point(for='#{ val.name }') #{ val.label }
 			else
-				input.future-plans__answer(id='#{val[Object.keys(val)[2]]}' name='chooseYourWay' type='radio')
-				label.future-plans__point(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
+				input.future-plans__answer(id='#{ val.name }' name='chooseYourWay' type='radio')
+				label.future-plans__point(for='#{ val.name }') #{ val.label }
