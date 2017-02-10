@@ -11,8 +11,6 @@ mixin index()
 	main.index
 		section.index__about-me
 			+point(getData('about-me'))
-		//section.optional-info
-		//include ../optional-info/optional-info
 		+optional-info(getData('optional-info'))
 		+js-level(getData('indicator-values'))
 		+subject-info
