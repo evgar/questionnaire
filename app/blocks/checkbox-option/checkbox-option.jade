@@ -1,0 +1,13 @@
+mixin checkbox-option(label, state, name, link)
+		.checkbox-option
+				if state == 'true' && link
+					- console.log(state)
+					input.checkbox-option__checkbox(id='#{ name }' type='checkbox' name='#{name}' checked)
+					label.checkbox-option__option(for='#{name}') #{label}
+						a.checkbox-option__link(href='#{link}') blog.cssr.ru
+				else if state == 'true'
+					input.checkbox-option__checkbox(id='#{name}' type='checkbox' name='#{name}' checked)
+					label.checkbox-option__option(for='#{name}') #{label}
+				else
+					input.checkbox-option__checkbox(id='#{name}' type='checkbox' name='#{name}')
+					label.checkbox-option__option(for='#{name}') #{label}

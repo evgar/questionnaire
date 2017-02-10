@@ -1,0 +1,6 @@
+mixin indicator(indicators)
+	.indicator
+		input.indicator__switch(type='range' min = 0 max = 10 value=5 )
+		.indicator__indicator
+			each val in indicators
+				.indicator__value #{ val }

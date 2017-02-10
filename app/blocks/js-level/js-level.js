@@ -1,5 +1,5 @@
 window.onload = function () {
-	const p = document.getElementById('skills');
+	const p = document.querySelector('.indicator__switch');
 
 	p.addEventListener('change', () => {
 		let status = p.dataset.status;

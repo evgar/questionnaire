@@ -1,43 +1,12 @@
-- var options = [];
-- options.push({label: 'БЭМ/OOCSS', state: true, name: 'bem'});
-- options.push({label: 'Pug (Jade)', state: true, name: 'pug'});
-- options.push({label: 'Stylus/LESS/SASS', state: true, name: 'css_preprocessor'});
-- options.push({label: 'Работаю с SVG', state: false, name: 'svg'});
-- options.push({label: 'Верстаю семантично', state: true, name: 'semantic_layout'});
-- options.push({label: 'Accessibility (A11Y)', state: false, name: 'accessibility'});
-- options.push({label: 'ES2015/ES2016', state: false, name: 'es'});
-- options.push({label: 'Gulp/GRUNT', state: true, name: 'packages'});
-- options.push({label: 'Webpack', state: false, name: 'webpack'});
-- options.push({label: 'Дружу с WebGL', state: false, name: 'webGL'});
-- options.push({label: 'jQuery', state: true, name: 'jQuery'});
-- options.push({label: 'Знаю/изучаю Angular', state: true, name: 'angular'});
-- options.push({label: 'Знаю/изучаю React', state: false, name: 'react'});
-- options.push({label: 'Знаю/изучаю Node.js', state: false, name: 'nodeJs'});
-- options.push({label: 'Использую Git', state: true, name: 'git'});
-- options.push({label: 'С глазомером всё ок', state: true, name: 'pixelPerfect'});
-- options.push({label: 'Читаю', state: true, name: 'blogReader', link: 'http://blog.csssr.ru/'});
-- options.push({label: 'Я ленивый(-ая)', state: false, name: 'lazy'});
-- options.push({label: 'У меня хороший английский', state: true, name: 'english'});
+include ../checkbox-option/checkbox-option
 
 mixin optional-info(options)
-	fieldset.optional-info
-		legend.optional-info__caption Расскажите о себе чекбоксами
+	section.optional-info
+		h3.optional-info__caption Расскажите о себе чекбоксами
 		p.optional-info__description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам.
 			|Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей.
 			|Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
-		div.options-block.optional-info__options
-			each val, index in options
-				if val[Object.keys(val)[1]] && val[Object.keys(val)[3]]
-					input.options-block__checkbox(id='#{val[Object.keys(val)[2]]}' type='checkbox' name='#{val[Object.keys(val)[2]]}' checked)
-					label.options-block__option(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
-						a.option__link(href='#{val[Object.keys(val)[3]]}') blog.cssr.ru
-				else if val[Object.keys(val)[1]]
-					input.options-block__checkbox(id='#{val[Object.keys(val)[2]]}' type='checkbox' name='#{val[Object.keys(val)[2]]}' checked)
-					label.options-block__option(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
-				else
-					input.options-block__checkbox(id='#{val[Object.keys(val)[2]]}' type='checkbox' name='#{val[Object.keys(val)[2]]}')
-					label.options-block__option(for='#{val[Object.keys(val)[2]]}') #{val[Object.keys(val)[0]]}
-
-+optional-info(options)
-
-
+			ul.optional-info__options-block
+				each val in options
+					li.optional-info__item
+						+checkbox-option(val.label, val.state, val.name, val.link)

@@ -1,8 +1,14 @@
-header.file-header
-	.header-logos
-		a.header-logos__csssr(href='http://csssr.ru/')
-			img(src='images/logo.png' alt='Космический фронтенд - CSSSR')
-		img.header-logos__filled-by-me(src='images/filled_by_me.png' alt='Заполнено собственноручно')
-	.header-title
-		img(src='images/file.png' alt='Дело')
+include ../csssr-logo/csssr-logo
+include ../secret-logo/secret-logo
+include ../title/title
 
+mixin header()
+	header.header
+		.header__logos
+			.header__csssr-logo
+				+csssr-logo
+			.header__secret-logo
+				+secret-logo
+		.header__title
+			+title
+		block

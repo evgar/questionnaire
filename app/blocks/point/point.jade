@@ -1,0 +1,4 @@
+mixin point(list)
+	each val in list
+		label.point #{ val[0] }
+			input.point__answer(value= '#{ val[1] }')

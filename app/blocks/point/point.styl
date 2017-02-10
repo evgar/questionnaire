@@ -1,0 +1,29 @@
+.point
+	display flex
+	font label-text
+	font-weight bold
+	color main-font-color
+	white-space nowrap
+
+	+below(5)
+		display block
+		font-size 20px
+
+	&:not(:first-child)
+		margin 33px 0 0 0
+
+	&__answer
+		font input-text
+		color input-text-color
+		background-color transparent
+		border-style solid
+		border-width 0 0 4px
+		border-image shabby-brown-line
+		width 100%
+		margin -22px 0 0 15px
+		padding 5px 12px
+
+		+below(5)
+			display block
+			font-size 24px
+			margin 0
