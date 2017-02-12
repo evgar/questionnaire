@@ -1,19 +1,51 @@
 include ../header/header
 include ../point/point
-include ../optional-info/optional-info
 include ../js-level/js-level
-include ../subject-info/subject-info
+include ../indicator/indicator
+include ../textfield/textfield
 include ../future-plans/future-plans
 include ../filling-date/filling-date
+include ../caption/caption
+include ../description/description
+include ../list/list
 
 mixin index()
 	+header
-	main.index
-		section.index__about-me
+	main.content
+
+		section.content__about-me
 			+point(getData('about-me'))
-		+optional-info(getData('optional-info'))
-		+js-level(getData('indicator-values'))
-		+subject-info
-		+future-plans(getData('future-plans'))
+
+		section.content__optional-info
+			+caption
+				|Расскажите о себе чекбоксами
+			+description
+				| Отметьте чекбоксами пункты, которые соответствуют вашим скиллам.
+				| Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей.
+				| Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+			.content__optional-info-list
+				+list(getData('optional-info'))
+
+		section.content__js-level
+			.content__js-level-caption
+				+caption
+					|Уровень владения JavaScript
+			+indicator(getData('indicator-values'))
+
+		section.content__subject-info
+			+caption
+				|Расскажите о себе словами
+			.content__subject-info.description
+				+description
+					|Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR.
+					|Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
+			+textfield
+
+		section.content__future-plans
+			+caption
+				|Какие у вас планы на будущее?
+			+description
+				|Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+			+list(getData('future-plans'))
 		+filling-date
 		block

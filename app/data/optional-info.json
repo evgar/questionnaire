@@ -1,98 +1,101 @@
-[
-  {
-	"label": "БЭМ/OOCSS",
-	"state": "true",
-	"name": "bem"
-  },
-  {
-	"label": "Pug (Jade)",
-	"state": "true",
-	"name": "pug"
-  },
-  {
-	"label": "Stylus/LESS/SASS",
-	"state": "true",
-	"name": "css_preprocessor"
-  },
-  {
-	"label": "Работаю с SVG",
-	"state": "false",
-	"name": "semantic_layout"
-  },
-  {
-	"label": "Верстаю семантично",
-	"state": "true",
-	"name": "semantic"
-  },
-  {
-	"label": "Accessibility (A11Y)",
-	"state": "false",
-	"name": "accessibility"
-  },
-  {
-	"label": "ES2015/ES2016",
-	"state": "false",
-	"name": "es"
-  },
-  {
-	"label": "Gulp/GRUNT",
-	"state": "true",
-	"name": "packages"
-  },
-  {
-	"label": "Webpack",
-	"state": "false",
-	"name": "webpack"
-  },
-  {
-	"label": "Дружу с WebGL",
-	"state": "false",
-	"name": "webGL"
-  },
-  {
-	"label": "jQuery",
-	"state": "true",
-	"name": "jquery"
-  },
-  {
-	"label": "Знаю/изучаю Angular",
-	"state": "true",
-	"name": "angular"
-  },
-  {
-	"label": "Знаю/изучаю React",
-	"state": "false",
-	"name": "react"
-  },
-  {
-	"label": "Знаю/изучаю Node.js",
-	"state": "false",
-	"name": "node"
-  },
-  {
-	"label": "Использую Git",
-	"state": "true",
-	"name": "pixelPerfect'"
-  },
-  {
-	"label": "С глазомером всё ок",
-	"state": "true",
-	"name": "perfectpixel"
-  },
-  {
-	"label": "Читаю",
-	"state": "true",
-	"name": "blogReader",
-	"link": "http://blog.csssr.ru/"
-  },
-  {
-	"label": "Я ленивый(-ая)",
-	"state": "false",
-	"name": "lazy"
-  },
-  {
-	"label": "У меня хороший английский",
-	"state": "true",
-	"name": "english"
-  }
-]
+{
+  "type": "checkbox",
+  "items": [
+	{
+	  "label": "БЭМ/OOCSS",
+	  "state": "true",
+	  "name": "bem"
+	},
+	{
+	  "label": "Pug (Jade)",
+	  "state": "true",
+	  "name": "pug"
+	},
+	{
+	  "label": "Stylus/LESS/SASS",
+	  "state": "true",
+	  "name": "css_preprocessor"
+	},
+	{
+	  "label": "Работаю с SVG",
+	  "state": "false",
+	  "name": "semantic_layout"
+	},
+	{
+	  "label": "Верстаю семантично",
+	  "state": "true",
+	  "name": "semantic"
+	},
+	{
+	  "label": "Accessibility (A11Y)",
+	  "state": "false",
+	  "name": "accessibility"
+	},
+	{
+	  "label": "ES2015/ES2016",
+	  "state": "false",
+	  "name": "es"
+	},
+	{
+	  "label": "Gulp/GRUNT",
+	  "state": "true",
+	  "name": "packages"
+	},
+	{
+	  "label": "Webpack",
+	  "state": "false",
+	  "name": "webpack"
+	},
+	{
+	  "label": "Дружу с WebGL",
+	  "state": "false",
+	  "name": "webGL"
+	},
+	{
+	  "label": "jQuery",
+	  "state": "true",
+	  "name": "jquery"
+	},
+	{
+	  "label": "Знаю/изучаю Angular",
+	  "state": "true",
+	  "name": "angular"
+	},
+	{
+	  "label": "Знаю/изучаю React",
+	  "state": "false",
+	  "name": "react"
+	},
+	{
+	  "label": "Знаю/изучаю Node.js",
+	  "state": "false",
+	  "name": "node"
+	},
+	{
+	  "label": "Использую Git",
+	  "state": "true",
+	  "name": "pixelPerfect'"
+	},
+	{
+	  "label": "С глазомером всё ок",
+	  "state": "true",
+	  "name": "perfectpixel"
+	},
+	{
+	  "label": "Читаю",
+	  "state": "true",
+	  "name": "blogReader",
+	  "link": "http://blog.csssr.ru/"
+	},
+	{
+	  "label": "Я ленивый(-ая)",
+	  "state": "false",
+	  "name": "lazy"
+	},
+	{
+	  "label": "У меня хороший английский",
+	  "state": "true",
+	  "name": "english"
+	}
+  ]
+}

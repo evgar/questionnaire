@@ -1,12 +1,7 @@
-mixin future-plans(ways)
-	fieldset.future-plans
-		legend.future-plans__caption Какие у вас планы на будущее?
-		p.future-plans__description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
-		
-		each val in ways
-			if val.state == "true"
-				input.future-plans__answer(id='#{ val.name }' name='chooseYourWay}' type='radio' checked)
-				label.future-plans__point(for='#{ val.name }') #{ val.label }
-			else
-				input.future-plans__answer(id='#{ val.name }' name='chooseYourWay' type='radio')
-				label.future-plans__point(for='#{ val.name }') #{ val.label }
+mixin future-plans(val)
+	if val.state == "true"
+		input.future-plans__answer(id='#{ val.name }' name='chooseYourWay' type='radio' checked)
+		label.future-plans__point(for='#{ val.name }') #{ val.label }
+	else
+		input.future-plans__answer(id='#{ val.name }' name='chooseYourWay' type='radio')
+		label.future-plans__point(for='#{ val.name }') #{ val.label }

@@ -1,0 +1,13 @@
+include ../checkbox-option/checkbox-option
+include ../future-plans/future-plans
+
+mixin list(options)
+	ul.list
+		if options.type == "checkbox"
+			each val in options.items
+				li.list__item
+					+checkbox-option(val)
+		if options.type == "radioButton"
+			each val in options.items
+				li.list__item
+					+future-plans(val)
