@@ -2,12 +2,13 @@ include ../checkbox-option/checkbox-option
 include ../future-plans/future-plans
 
 mixin list(options)
-	ul.list
 		if options.type == "checkbox"
-			each val in options.items
-				li.list__item
-					+checkbox-option(val)
+			ul.list.list_checkboxes-list
+				each val in options.items
+					li.list__checkbox
+						+checkbox-option(val)
 		if options.type == "radioButton"
-			each val in options.items
-				li.list__item
-					+future-plans(val)
+			ul.list.list_radiobuttons
+				each val in options.items
+					li.list__radio
+						+future-plans(val)

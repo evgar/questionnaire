@@ -1,21 +1,44 @@
 .list
 	font checkboxes-label
 	display flex
-	flex-flow column wrap
-	height 260px
 
-	+below(5)
-		height 375px
-
-	+below(3)
-		margin 0 0 0 15%
-
-	+below(2)
-		margin 0
-		height 500px
-
-	+below(1)
-		height 100%
-
-	&__item
+	&__checkbox
 		margin 3.1px 5.4% 5px 0.8%
+
+		+below(2)
+			margin 10px 0 0 0
+			width 42%
+		+below(1)
+			width 100%
+
+	&__radio
+		margin 8px 18px 5px 0.8%
+
+		+below(5)
+			display block
+			width 45%
+			float left
+
+		+below(2)
+			width 100%
+
+	&_checkboxes-list
+		flex-flow column wrap
+		height 260px
+
+		+below(5)
+			height 375px
+
+		+below(3)
+			margin 0 0 0 15%
+
+		+below(2)
+			margin 0
+			min-height 580px
+
+		+below(1)
+			height 100%
+
+	&_radiobuttons
+		flex-flow row wrap
+
